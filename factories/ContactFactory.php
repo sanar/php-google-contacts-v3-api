@@ -228,7 +228,8 @@ abstract class ContactFactory
         $entry->setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:gd', 'http://schemas.google.com/g/2005');
         $doc->appendChild($entry);
 
-        $title = $doc->createElement('title', $name);
+        $title = $doc->createElement('gd:name');
+        $title->setAttribute('fullName', $name);
         $entry->appendChild($title);
 
         $email = $doc->createElement('gd:email');
